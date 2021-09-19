@@ -13,8 +13,8 @@ public class CreateController {
     private final QuizService quizService;
 
     @GetMapping
-    public String getQuiz() {
-        return "";
+    public QuestionInfo getQuiz(@RequestParam String uuid) {
+        return this.quizService.getQuiz(uuid);
     }
 
     @PostMapping
@@ -28,8 +28,8 @@ public class CreateController {
     }
 
     @DeleteMapping
-    public int deleteQuiz(@RequestParam String qid){
-        return this.quizService.deleteQuiz(qid);
+    public int deleteQuiz(@RequestParam String uuid){
+        return this.quizService.deleteQuiz(uuid);
     }
 
 }

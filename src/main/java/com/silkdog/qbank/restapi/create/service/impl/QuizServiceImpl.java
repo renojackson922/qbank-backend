@@ -10,6 +10,11 @@ import org.springframework.stereotype.Service;
 public class QuizServiceImpl implements QuizService {
 
     @Override
+    public QuestionInfo getQuiz(String uuid) {
+        return new QuestionInfo();
+    }
+
+    @Override
     public int createQuiz(QuestionInfo questionInfo) {
         return 0;
     }
@@ -20,7 +25,7 @@ public class QuizServiceImpl implements QuizService {
     }
 
     @Override
-    public int deleteQuiz(String qid) {
+    public int deleteQuiz(String uuid) {
         return 0;
     }
 }
