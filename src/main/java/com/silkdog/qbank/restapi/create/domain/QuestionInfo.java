@@ -1,5 +1,6 @@
 package com.silkdog.qbank.restapi.create.domain;
 
+import com.silkdog.qbank.util.CRUDLog;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class QuestionInfo {
+public class QuestionInfo extends CRUDLog {
 
     private UUID uuid;
     private String questionName;

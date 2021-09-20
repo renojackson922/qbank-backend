@@ -18,17 +18,17 @@ public class CreateController {
     }
 
     @PostMapping
-    public int insertQuiz(@RequestBody QuestionInfo questionInfo){
+    public int insertQuiz(@RequestBody QuestionInfo questionInfo) {
         return this.quizService.createQuiz(questionInfo);
     }
 
     @PutMapping
-    public int updateQuiz(@RequestBody QuestionInfo questionInfo){
+    public int updateQuiz(@RequestBody QuestionInfo questionInfo) {
         return this.quizService.updateQuiz(questionInfo);
     }
 
     @DeleteMapping
-    public int deleteQuiz(@RequestParam String uuid){
+    public int deleteQuiz(@RequestParam String uuid) {
         return this.quizService.deleteQuiz(uuid);
     }
 

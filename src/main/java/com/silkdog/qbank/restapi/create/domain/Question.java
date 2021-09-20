@@ -1,5 +1,6 @@
 package com.silkdog.qbank.restapi.create.domain;
 
+import com.silkdog.qbank.util.CRUDLog;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Question {
+public class Question extends CRUDLog {
 
     private int qid; // 퀴즈번호 (Unique)
     private int quizType; // 1: 선택, 2: 단답(input=text), 3: 서술 (textarea) TODO: refer to QuizType
