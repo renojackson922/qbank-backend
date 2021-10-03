@@ -10,10 +10,10 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class QuestionInfo extends CRUDLog {
+public class Quiz extends CRUDLog {
 
     private UUID uuid;
-    private String questionName;
+    private String qName;
     private String author;
     private LocalDate createDate;
     private LocalDate updateDate;
