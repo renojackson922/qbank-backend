@@ -12,7 +12,7 @@ public class Question extends CRUDLog {
 
     private int qid; // 퀴즈번호 (Unique)
     private int quizType; // 1: 선택, 2: 단답(input=text), 3: 서술 (textarea) TODO: refer to QuizType
-    private boolean multiYn;
+    private String multiYn;  // Y, N
     private int minLength;
     private int maxLength;
     private String question;

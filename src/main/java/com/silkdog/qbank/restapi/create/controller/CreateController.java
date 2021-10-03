@@ -1,6 +1,6 @@
 package com.silkdog.qbank.restapi.create.controller;
 
-import com.silkdog.qbank.restapi.create.domain.QuestionInfo;
+import com.silkdog.qbank.restapi.create.domain.Quiz;
 import com.silkdog.qbank.restapi.create.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,18 +13,18 @@ public class CreateController {
     private final QuizService quizService;
 
     @GetMapping
-    public QuestionInfo getQuiz(@RequestParam String uuid) {
+    public Quiz getQuiz(@RequestParam String uuid) {
         return this.quizService.getQuiz(uuid);
     }
 
     @PostMapping
-    public int insertQuiz(@RequestBody QuestionInfo questionInfo) {
-        return this.quizService.createQuiz(questionInfo);
+    public int insertQuiz(@RequestBody Quiz quiz) {
+        return this.quizService.createQuiz(quiz);
     }
 
     @PutMapping
-    public int updateQuiz(@RequestBody QuestionInfo questionInfo) {
-        return this.quizService.updateQuiz(questionInfo);
+    public int updateQuiz(@RequestBody Quiz quiz) {
+        return this.quizService.updateQuiz(quiz);
     }
 
     @DeleteMapping

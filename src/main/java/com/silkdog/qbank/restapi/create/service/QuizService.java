@@ -1,14 +1,14 @@
 package com.silkdog.qbank.restapi.create.service;
 
-import com.silkdog.qbank.restapi.create.domain.QuestionInfo;
+import com.silkdog.qbank.restapi.create.domain.Quiz;
 
 public interface QuizService {
 
-    QuestionInfo getQuiz(String uuid);
+    Quiz getQuiz(String uuid);
 
-    int createQuiz(QuestionInfo questionInfo);
+    int createQuiz(Quiz quiz);
 
-    int updateQuiz(QuestionInfo questionInfo);
+    int updateQuiz(Quiz quiz);
 
     int deleteQuiz(String uuid);
 }
