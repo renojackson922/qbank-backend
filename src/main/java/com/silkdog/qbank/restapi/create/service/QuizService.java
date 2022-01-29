@@ -1,6 +1,6 @@
 package com.silkdog.qbank.restapi.create.service;
 
-import com.silkdog.qbank.restapi.create.domain.Quiz;
+import com.silkdog.qbank.restapi.common.entity.Quiz;
 
 public interface QuizService {
 
