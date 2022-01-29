@@ -1,6 +1,7 @@
 package com.silkdog.qbank.restapi.create.service.impl;
 
-import com.silkdog.qbank.restapi.create.domain.Quiz;
+import com.silkdog.qbank.restapi.common.entity.Quiz;
+import com.silkdog.qbank.restapi.common.repository.QuizRepository;
 import com.silkdog.qbank.restapi.create.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,9 +10,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class QuizServiceImpl implements QuizService {
 
+    private final QuizRepository quizRepository;
+
     @Override
-    public Quiz getQuiz(String uuid) {
-        return new Quiz();
+    public Quiz getQuiz(String quizUuid) {
+        return this.quizRepository.findByQuizUuid(quizUuid);
     }
 
     @Override
