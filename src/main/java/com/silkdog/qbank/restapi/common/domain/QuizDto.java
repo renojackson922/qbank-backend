@@ -4,15 +4,11 @@ import com.silkdog.qbank.util.CRUDLog;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class Quiz extends CRUDLog {
+public class QuizDto extends CRUDLog {
 
     private long id;
     private String quizUuid;
