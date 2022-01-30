@@ -1,5 +1,6 @@
 package com.silkdog.qbank.restapi.common.domain;
 
+import com.silkdog.qbank.util.CRUDLog;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class Quiz {
+public class Quiz extends CRUDLog {
 
     private long id;
     private String quizUuid;

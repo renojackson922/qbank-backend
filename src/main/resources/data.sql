@@ -23,6 +23,38 @@ INSERT INTO quiz
 VALUES('487c2c68-7b4e-4bdb-a7a9-60ca1330663b', '테스트퀴즈', 1, 0, 0, 0, '2022-01-29 18:09:44.908', NULL, '2022-01-29 18:10:00.022', '2022-01-29 18:10:03.141', NULL);
 
 
+CREATE TABLE question (
+                          id            bigint(20) auto_increment,
+                          quiz_uuid     varchar(36) not null,
+                          quiz_type     tinyint	default(1),
+                          multi_yn	    bit	default(0),
+                          min_length    mediumint(4) default(0),
+                          max_length	mediumint(4) default(0),
+                          question      varchar(1024) not null,
+                          example_type  tinyint default(1),
+                          example_text  text null,
+                          created_at    datetime(3) default(now()),
+                          updated_at    datetime(3) default(now()),
+                          deleted_at    datetime(3) null,
+                          primary key(`id`)
+);
+
+
+
+
+CREATE TABLE answer (
+                        id          bigint(20) auto_increment,
+                        quiz_uuid   varchar(36) not null,
+                        quiz_type   tinyint	default(1),
+                        answer    varchar(1024) not null,
+                        created_at   datetime(3) default(now()),
+                        updated_at   datetime(3) default(now()),
+                        deleted_at   datetime(3) null,
+                        primary key(`id`)
+);
+
+
+
 -- CREATE TABLE quiz (
 --       uuid              VARCHAR(255) NOT NULL
 --     , q_name            VARCHAR(500) NOT NULL

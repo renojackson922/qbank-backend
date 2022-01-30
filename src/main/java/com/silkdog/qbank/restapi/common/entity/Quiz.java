@@ -16,7 +16,7 @@ public class Quiz extends CRUDLog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name="quiz_uuid")
+    @Column(name = "quiz_uuid")
     private String quizUuid;
     private String quizName;
     private long userId;
