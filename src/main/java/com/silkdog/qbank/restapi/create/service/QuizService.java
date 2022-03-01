@@ -1,10 +1,11 @@
 package com.silkdog.qbank.restapi.create.service;
 
+import com.silkdog.qbank.restapi.common.domain.QuizWithQnaDto;
 import com.silkdog.qbank.restapi.common.entity.Quiz;
 
 public interface QuizService {
 
-    Quiz getQuiz(String uuid);
+    QuizWithQnaDto getQuiz(String uuid);
 
     int createQuiz(Quiz quiz);
 

@@ -1,6 +1,6 @@
 package com.silkdog.qbank.restapi.create.controller;
 
-import com.silkdog.qbank.restapi.common.domain.QuestionAndAnswerDto;
+import com.silkdog.qbank.restapi.common.domain.QnaDto;
 import com.silkdog.qbank.restapi.create.service.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ public class QuestionController {
     private final QuestionService questionService;
 
     @PostMapping
-    public ResponseEntity<?> insertQuestion(@RequestBody QuestionAndAnswerDto qna) throws Exception {
+    public ResponseEntity<?> insertQuestion(@RequestBody QnaDto qna) throws Exception {
         String quizUuid = qna.getQuizUuid();
         return ResponseEntity.ok(questionService.insertQuestion(quizUuid, qna));
     }

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class QuestionAndAnswerDto {
+public class QnaDto {
     private String quizUuid;
     @JsonProperty("question")
     private QuestionDto questionDto;

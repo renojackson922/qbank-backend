@@ -1,7 +1,7 @@
 package com.silkdog.qbank.restapi.create.service.impl;
 
 import com.silkdog.qbank.common.Config.CustomModelMapper;
-import com.silkdog.qbank.restapi.common.domain.QuestionAndAnswerDto;
+import com.silkdog.qbank.restapi.common.domain.QnaDto;
 import com.silkdog.qbank.restapi.common.entity.Answer;
 import com.silkdog.qbank.restapi.common.entity.Question;
 import com.silkdog.qbank.restapi.common.entity.Quiz;
@@ -26,7 +26,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     // FIXME: Exception 재정의
     @Override
-    public int insertQuestion(String quizUuid, QuestionAndAnswerDto qna) throws Exception {
+    public int insertQuestion(String quizUuid, QnaDto qna) throws Exception {
         System.out.println(quizUuid);
         Quiz currentQuiz = quizRepository.findByQuizUuid(quizUuid);
         System.out.println(currentQuiz);
@@ -39,7 +39,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Transactional
-    void saveQuizAnswerTransactional(QuestionAndAnswerDto qna) {
+    void saveQuizAnswerTransactional(QnaDto qna) {
         ModelMapper modelMapper = customModelMapper.standardMapper();
         questionRepository.save(modelMapper.map(qna.getQuestionDto(), Question.class));
         answerRepository.save(modelMapper.map(qna.getAnswerDto(), Answer.class));
