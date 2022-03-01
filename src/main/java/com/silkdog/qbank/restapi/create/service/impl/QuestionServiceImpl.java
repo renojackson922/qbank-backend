@@ -1,5 +1,6 @@
 package com.silkdog.qbank.restapi.create.service.impl;
 
+import com.silkdog.qbank.common.Config.CustomModelMapper;
 import com.silkdog.qbank.restapi.common.domain.QuestionAndAnswerDto;
 import com.silkdog.qbank.restapi.common.entity.Answer;
 import com.silkdog.qbank.restapi.common.entity.Question;
@@ -18,7 +19,7 @@ import javax.transaction.Transactional;
 @RequiredArgsConstructor
 public class QuestionServiceImpl implements QuestionService {
 
-    private final ModelMapper modelMapper;
+    private final CustomModelMapper customModelMapper;
     private final QuizRepository quizRepository;
     private final QuestionRepository questionRepository;
     private final AnswerRepository answerRepository;
@@ -38,18 +39,10 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Transactional
-    void saveQuizAnswerTransactional(QuestionAndAnswerDto qna) throws Exception {
-        int count = 0;
-
-        Question question = modelMapper.map(qna.getQuestionDto(), Question.class);
-        Answer answer = modelMapper.map(qna.getAnswerDto(), Answer.class);
-        //count +=
-        questionRepository.save(question);
-        //count +=
-        answerRepository.save(answer);
-//        if (count != 2) {
-//            throw new Exception("transaction is invalid: expected count = 2, but currency count = " + count);
-//        }
+    void saveQuizAnswerTransactional(QuestionAndAnswerDto qna) {
+        ModelMapper modelMapper = customModelMapper.standardMapper();
+        questionRepository.save(modelMapper.map(qna.getQuestionDto(), Question.class));
+        answerRepository.save(modelMapper.map(qna.getAnswerDto(), Answer.class));
     }
 
 }

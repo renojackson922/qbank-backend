@@ -17,7 +17,7 @@ import java.util.List;
 public class Question extends CRUDLog {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String quizUuid; // 퀴즈번호 (Unique)
     private int quizType; // 1: 선택, 2: 단답(input=text), 3: 서술 (textarea) TODO: refer to QuizType
